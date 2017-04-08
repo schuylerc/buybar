@@ -15,6 +15,8 @@
 		032FAA9F1E98AF4F00840BFC /* buybarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA9E1E98AF4F00840BFC /* buybarTests.swift */; };
 		032FAAAA1E98AF4F00840BFC /* buybarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAA91E98AF4F00840BFC /* buybarUITests.swift */; };
 		032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAB71E98B70000840BFC /* BarBrain.swift */; };
+		A8A892741E98E10800D23175 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A892731E98E10800D23175 /* MainViewController.swift */; };
+		A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9D9901E9958D200E27BA9 /* SessionId.swift */; };
 		D2ADFF458330D90DDEB69DC2 /* Pods_buybar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8F6F07EE1ADCB2196232E /* Pods_buybar.framework */; };
 		E5427F1279779E8F757B7313 /* Pods_buybarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C6BA228661EA8A6AFC41AA /* Pods_buybarTests.framework */; };
 		EC523353500EABD5B99C9D7A /* Pods_buybarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F49785B0F770B72E7E84130 /* Pods_buybarUITests.framework */; };
@@ -59,6 +61,8 @@
 		65C6BA228661EA8A6AFC41AA /* Pods_buybarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buybarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9A55DC1D598CA13FF2518C /* Pods-buybarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buybarUITests/Pods-buybarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D5F66FA61B3DCFF21036455 /* Pods-buybar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybar.release.xcconfig"; path = "Pods/Target Support Files/Pods-buybar/Pods-buybar.release.xcconfig"; sourceTree = "<group>"; };
+		A8A892731E98E10800D23175 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A8D9D9901E9958D200E27BA9 /* SessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionId.swift; sourceTree = "<group>"; };
 		C1072B0F0233A9BF8FE36414 /* Pods-buybar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buybar/Pods-buybar.debug.xcconfig"; sourceTree = "<group>"; };
 		D04902338EF78628EEE3BD22 /* Pods-buybarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buybarUITests/Pods-buybarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 				032FAA921E98AF4E00840BFC /* LaunchScreen.storyboard */,
 				032FAA951E98AF4E00840BFC /* Info.plist */,
 				032FAAB71E98B70000840BFC /* BarBrain.swift */,
+				A8A892731E98E10800D23175 /* MainViewController.swift */,
+				A8D9D9901E9958D200E27BA9 /* SessionId.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -245,7 +251,7 @@
 				TargetAttributes = {
 					032FAA851E98AF4E00840BFC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 96YCEMN4BV;
+						DevelopmentTeam = 4P5B26VHR4;
 						ProvisioningStyle = Automatic;
 					};
 					032FAA991E98AF4F00840BFC = {
@@ -453,8 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */,
+				A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */,
 				032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */,
 				032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */,
+				A8A892741E98E10800D23175 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,10 +615,11 @@
 			baseConfigurationReference = C1072B0F0233A9BF8FE36414 /* Pods-buybar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 96YCEMN4BV;
+				DEVELOPMENT_TEAM = 4P5B26VHR4;
 				INFOPLIST_FILE = buybar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -621,10 +630,11 @@
 			baseConfigurationReference = 9D5F66FA61B3DCFF21036455 /* Pods-buybar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 96YCEMN4BV;
+				DEVELOPMENT_TEAM = 4P5B26VHR4;
 				INFOPLIST_FILE = buybar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

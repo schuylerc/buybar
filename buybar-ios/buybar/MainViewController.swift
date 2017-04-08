@@ -57,8 +57,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let row = indexPath.row
         print("Row: \(row)")
         
-//        print(meetingArray[row] as! String)
+        let alert = UIAlertController(title: "Alert", message: "Purchase " + menuItemArray[indexPath.row] + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Yes Pressed")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
         
+        self.present(alert, animated: true, completion: nil)
     }
     
     

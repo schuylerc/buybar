@@ -245,7 +245,7 @@
 				TargetAttributes = {
 					032FAA851E98AF4E00840BFC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4P5B26VHR4;
+						DevelopmentTeam = 96YCEMN4BV;
 						ProvisioningStyle = Automatic;
 					};
 					032FAA991E98AF4F00840BFC = {
@@ -607,11 +607,11 @@
 			baseConfigurationReference = C1072B0F0233A9BF8FE36414 /* Pods-buybar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P5B26VHR4;
+				DEVELOPMENT_TEAM = 96YCEMN4BV;
 				INFOPLIST_FILE = buybar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -622,11 +622,11 @@
 			baseConfigurationReference = 9D5F66FA61B3DCFF21036455 /* Pods-buybar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P5B26VHR4;
+				DEVELOPMENT_TEAM = 96YCEMN4BV;
 				INFOPLIST_FILE = buybar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

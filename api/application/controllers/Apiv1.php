@@ -356,4 +356,174 @@ public $user_id;
 
 
 
+
+  public function menu_items($id = ''){
+  		//authenticate the user
+  		$this->authenticate_key();
+
+  		//NO ID
+  		if($id == ''){
+  			//POST - 
+  			if($this->input->server('REQUEST_METHOD') == 'POST'){
+  				$this->parameter_error();
+  			}
+  			//GET - fetch the list of available items for purchase
+  			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+  				$this->json_output($this->db->get('menu_items')->result_object());
+  			}
+  			//PUT - 
+  			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+  				$this->parameter_error();
+  			}
+  			//DELETE - 
+  			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+  				$this->parameter_error();
+  			}
+  			//NONE
+  			else {
+  				$this->request_error();
+  			}
+  		}
+  		//WITH ID
+  		else{
+  			//POST - 
+  			if($this->input->server('REQUEST_METHOD') == 'POST'){
+  				$this->parameter_error();
+  			}
+  			//GET - 
+  			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+  				$this->parameter_error();
+  			}
+  			//PUT - 
+  			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+  				$this->parameter_error();
+  			}
+  			//DELETE - 
+  			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+  				$this->parameter_error();
+  			}
+  			//NONE
+  			else {
+  				$this->request_error();
+  			}
+  		}
+
+  	}
+
+
+
+
+
+
+
+    public function orders($id = ''){
+    		//authenticate the user
+    		$this->authenticate_key();
+
+    		//NO ID
+    		if($id == ''){
+    			//POST - 
+    			if($this->input->server('REQUEST_METHOD') == 'POST'){
+    				$this->parameter_error();
+    			}
+    			//GET - fetch the list of available items for purchase
+    			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+    				$this->json_output($this->db->get('orders')->result_object());
+    			}
+    			//PUT - 
+    			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+    				$this->parameter_error();
+    			}
+    			//DELETE - 
+    			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+    				$this->parameter_error();
+    			}
+    			//NONE
+    			else {
+    				$this->request_error();
+    			}
+    		}
+    		//WITH ID
+    		else{
+    			//POST - 
+    			if($this->input->server('REQUEST_METHOD') == 'POST'){
+    				$this->parameter_error();
+    			}
+    			//GET - 
+    			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+    				$this->parameter_error();
+    			}
+    			//PUT - 
+    			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+    				$this->parameter_error();
+    			}
+    			//DELETE - 
+    			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+    				$this->parameter_error();
+    			}
+    			//NONE
+    			else {
+    				$this->request_error();
+    			}
+    		}
+
+    	}
+
+
+
+      public function sessions($id = ''){
+      		//authenticate the user
+      		$this->authenticate_key();
+
+      		//NO ID
+      		if($id == ''){
+      			//POST - 
+      			if($this->input->server('REQUEST_METHOD') == 'POST'){
+      				$this->parameter_error();
+      			}
+      			//GET - fetch the list of available items for purchase
+      			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+      				$this->json_output($this->db->get('sessions')->result_object());
+      			}
+      			//PUT - 
+      			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+      				$this->parameter_error();
+      			}
+      			//DELETE - 
+      			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+      				$this->parameter_error();
+      			}
+      			//NONE
+      			else {
+      				$this->request_error();
+      			}
+      		}
+      		//WITH ID
+      		else{
+      			//POST - 
+      			if($this->input->server('REQUEST_METHOD') == 'POST'){
+      				$this->parameter_error();
+      			}
+      			//GET - 
+      			else if($this->input->server('REQUEST_METHOD') == 'GET'){
+      				$this->parameter_error();
+      			}
+      			//PUT - 
+      			else if($this->input->server('REQUEST_METHOD') == 'PUT'){
+      				$this->parameter_error();
+      			}
+      			//DELETE - 
+      			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
+      				$this->parameter_error();
+      			}
+      			//NONE
+      			else {
+      				$this->request_error();
+      			}
+      		}
+
+      	}
+
+
+
 }

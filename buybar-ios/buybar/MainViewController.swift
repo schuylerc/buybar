@@ -24,6 +24,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print(SessionId.getId())
         print(SessionId.getEmail())
         print(SessionId.getPhoneNumber())
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -48,10 +51,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("I am here")
-        print(menuItemArray[indexPath.row])
+        
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        
+        let row = indexPath.row
+        print("Row: \(row)")
+        
+//        print(meetingArray[row] as! String)
+        
     }
-
+    
+    
+    @IBAction func close(_ sender: Any) {
+        print("button pressed")
+    }
     /*
     // MARK: - Navigation
 

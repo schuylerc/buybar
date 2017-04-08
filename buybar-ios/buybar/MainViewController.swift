@@ -9,7 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeTab: UIButton!
     
     var menuItemArray = ["one", "two", "three"]

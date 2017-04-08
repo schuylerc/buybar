@@ -5,4 +5,4 @@ xcode_scheme: Supermarket Register #4
 xcode_sdk: iphonesimulator8.3 #5
 
 script:
-    - cd buybar-ios && xcodebuild -list && xcodebuild clean build test -sdk iphonesimulator -project buybar.xcodeproj -scheme Debug CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
+    - cd buybar-ios && xcodebuild -list && xcodebuild clean build test -sdk iphonesimulator -project buybar.xcodeproj CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'

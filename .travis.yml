@@ -6,6 +6,6 @@ xcode_sdk: iphonesimulator8.3 #5
 before_script:
     - gem install xcodeproj
     - gem install cocoapods -v '0.32.1'
-    - cd buybar-ios && pod install && cd ..
+    - cd buybar-ios && pod repo update && pod install && cd ..
 script:
     - cd buybar-ios && xcodebuild -list && xcodebuild -list && xcodebuild clean build test -sdk iphonesimulator -project buybar.xcodeproj -scheme buybar CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'

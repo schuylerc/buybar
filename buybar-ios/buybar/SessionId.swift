@@ -11,6 +11,8 @@ import Foundation
 class SessionId {
     
     static var id = ""
+    static var email = ""
+    static var phoneNumber = ""
 
     static func setId(newId : String) {
         id = newId
@@ -18,5 +20,21 @@ class SessionId {
     
     static func getId() -> String {
         return id
+    }
+    
+    static func setEmail(newEmail : String) {
+        email = newEmail
+    }
+    
+    static func getEmail() -> String {
+        return email
+    }
+    
+    static func setPhoneNumber(newPhoneNumber : String) {
+        phoneNumber = newPhoneNumber
+    }
+    
+    static func getPhoneNumber() -> String {
+        return phoneNumber
     }
 }

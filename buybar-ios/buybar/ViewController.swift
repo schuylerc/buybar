@@ -90,7 +90,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         
         dismiss(animated: true)
-        performSegue(withIdentifier: "scanSegue", sender: nil)
+        performSegue(withIdentifier: "scanSegue", sender: self)
     }
     
     func found(code: String) {

@@ -24,11 +24,67 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="Oz8-91-oFN" kind="show" identifier="scanSegue" id="KUg-sl-LwQ"/>
+                        <segue destination="Mra-aF-PG9" kind="show" identifier="scanSegue" id="1uL-Pt-RFM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="49" y="107"/>
+        </scene>
+        <!--Email View Controller-->
+        <scene sceneID="nyV-zT-Lne">
+            <objects>
+                <viewController id="Mra-aF-PG9" customClass="EmailViewController" customModule="buybar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D4X-c3-jPI"/>
+                        <viewControllerLayoutGuide type="bottom" id="YpQ-cd-FEF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uUV-3Q-IiW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-IW-Fx4">
+                                <rect key="frame" x="16" y="233" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifk-hl-QYW">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="Mra-aF-PG9" eventType="touchUpInside" id="jMl-Rt-ejV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCD-fm-cD6">
+                                <rect key="frame" x="16" y="271" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RCD-fm-cD6" firstAttribute="leading" secondItem="ifk-hl-QYW" secondAttribute="leading" id="01M-CQ-cHH"/>
+                            <constraint firstItem="SOD-IW-Fx4" firstAttribute="trailing" secondItem="RCD-fm-cD6" secondAttribute="trailing" id="V1e-j9-fTQ"/>
+                            <constraint firstItem="ifk-hl-QYW" firstAttribute="centerY" secondItem="uUV-3Q-IiW" secondAttribute="centerY" id="XzM-DB-6gS"/>
+                            <constraint firstItem="RCD-fm-cD6" firstAttribute="trailing" secondItem="ifk-hl-QYW" secondAttribute="trailing" id="cpX-FK-50c"/>
+                            <constraint firstItem="SOD-IW-Fx4" firstAttribute="trailing" secondItem="uUV-3Q-IiW" secondAttribute="trailingMargin" id="ikx-vt-Dgg"/>
+                            <constraint firstItem="SOD-IW-Fx4" firstAttribute="leading" secondItem="uUV-3Q-IiW" secondAttribute="leadingMargin" id="kER-fg-R4A"/>
+                            <constraint firstItem="RCD-fm-cD6" firstAttribute="top" secondItem="SOD-IW-Fx4" secondAttribute="bottom" constant="8" symbolic="YES" id="lZh-R8-X2k"/>
+                            <constraint firstItem="ifk-hl-QYW" firstAttribute="top" secondItem="RCD-fm-cD6" secondAttribute="bottom" constant="17" id="pkG-RT-Ri6"/>
+                            <constraint firstItem="SOD-IW-Fx4" firstAttribute="leading" secondItem="RCD-fm-cD6" secondAttribute="leading" id="yfs-vY-DRv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="SOD-IW-Fx4" id="mfk-fJ-URC"/>
+                        <outlet property="phoneNumber" destination="RCD-fm-cD6" id="Nxx-xL-Asc"/>
+                        <segue destination="Oz8-91-oFN" kind="show" identifier="emailSegue" id="7Tz-Hx-mP7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ce-5n-pyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="110.19490254872565"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Odd-jI-fSx">
@@ -54,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="28" width="328" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOz-ev-cTZ" id="coC-Hx-GPW">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -82,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzg-aY-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1847" y="107"/>
         </scene>
     </scenes>
 </document>

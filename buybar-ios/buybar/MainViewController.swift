@@ -22,6 +22,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         closeTab.setTitleColor(.white, for: .normal)
         
         print(SessionId.getId())
+        print(SessionId.getEmail())
+        print(SessionId.getPhoneNumber())
+
         // Do any additional setup after loading the view.
     }
 

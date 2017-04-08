@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,10 +30,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Odd-jI-fSx">
             <objects>
-                <viewController id="Oz8-91-oFN" sceneMemberID="viewController">
+                <viewController id="Oz8-91-oFN" customClass="MainViewController" customModule="buybar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O9z-Gd-495"/>
                         <viewControllerLayoutGuide type="bottom" id="ViQ-ql-YYo"/>
@@ -40,12 +41,39 @@
                     <view key="view" contentMode="scaleToFill" id="qBc-4P-TwB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-pV-UY5">
+                                <rect key="frame" x="153" y="586" width="68" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="R74-Td-pkf"/>
+                                    <constraint firstAttribute="height" constant="50" id="tC6-DI-w9x"/>
+                                </constraints>
+                                <state key="normal" title="Close Tab"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQn-Nx-3vA">
+                                <rect key="frame" x="67" y="208" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="leading" secondItem="qBc-4P-TwB" secondAttribute="leadingMargin" constant="10" id="7H6-Iy-2ZT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n1U-pV-UY5" secondAttribute="trailing" constant="138" id="ONQ-3m-Twz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KQn-Nx-3vA" secondAttribute="trailing" constant="10" id="Q1A-Id-nn1"/>
+                            <constraint firstItem="n1U-pV-UY5" firstAttribute="centerX" secondItem="qBc-4P-TwB" secondAttribute="centerX" id="Wvy-wg-ABq"/>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="centerX" secondItem="qBc-4P-TwB" secondAttribute="centerX" id="rfv-IC-nQL"/>
+                            <constraint firstItem="n1U-pV-UY5" firstAttribute="leading" secondItem="qBc-4P-TwB" secondAttribute="leadingMargin" constant="137" id="uaP-SX-W6V"/>
+                            <constraint firstItem="ViQ-ql-YYo" firstAttribute="top" secondItem="n1U-pV-UY5" secondAttribute="bottom" constant="100" id="wBr-Hd-M71"/>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="top" secondItem="O9z-Gd-495" secondAttribute="bottom" id="yzQ-Iy-7c5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeTab" destination="n1U-pV-UY5" id="pqM-pb-4of"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzg-aY-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="139"/>
+            <point key="canvasLocation" x="948" y="139"/>
         </scene>
     </scenes>
 </document>

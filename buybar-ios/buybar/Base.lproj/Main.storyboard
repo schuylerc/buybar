@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,10 +30,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Odd-jI-fSx">
             <objects>
-                <viewController id="Oz8-91-oFN" sceneMemberID="viewController">
+                <viewController id="Oz8-91-oFN" customClass="MainViewController" customModule="buybar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O9z-Gd-495"/>
                         <viewControllerLayoutGuide type="bottom" id="ViQ-ql-YYo"/>
@@ -40,12 +41,56 @@
                     <view key="view" contentMode="scaleToFill" id="qBc-4P-TwB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-pV-UY5">
+                                <rect key="frame" x="153" y="586" width="68" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="R74-Td-pkf"/>
+                                    <constraint firstAttribute="height" constant="50" id="tC6-DI-w9x"/>
+                                </constraints>
+                                <state key="normal" title="Close Tab"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQn-Nx-3vA">
+                                <rect key="frame" x="24" y="28" width="328" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="550" id="APZ-10-KCj"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customcell" id="WOz-ev-cTZ">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOz-ev-cTZ" id="coC-Hx-GPW">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Oz8-91-oFN" id="HZE-cg-Qta"/>
+                                    <outlet property="delegate" destination="qBc-4P-TwB" id="Y3U-4G-79x"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="centerX" secondItem="qBc-4P-TwB" secondAttribute="centerX" id="0Ra-0S-dt3"/>
+                            <constraint firstItem="n1U-pV-UY5" firstAttribute="top" secondItem="KQn-Nx-3vA" secondAttribute="bottom" constant="8" symbolic="YES" id="1Go-7c-Ki4"/>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="leading" secondItem="qBc-4P-TwB" secondAttribute="leadingMargin" constant="8" id="5et-vt-SAp"/>
+                            <constraint firstItem="KQn-Nx-3vA" firstAttribute="top" secondItem="O9z-Gd-495" secondAttribute="bottom" constant="8" symbolic="YES" id="JDP-uL-paL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n1U-pV-UY5" secondAttribute="trailing" constant="138" id="ONQ-3m-Twz"/>
+                            <constraint firstItem="n1U-pV-UY5" firstAttribute="centerX" secondItem="qBc-4P-TwB" secondAttribute="centerX" id="Wvy-wg-ABq"/>
+                            <constraint firstItem="n1U-pV-UY5" firstAttribute="leading" secondItem="qBc-4P-TwB" secondAttribute="leadingMargin" constant="137" id="uaP-SX-W6V"/>
+                            <constraint firstItem="ViQ-ql-YYo" firstAttribute="top" secondItem="n1U-pV-UY5" secondAttribute="bottom" constant="100" id="wBr-Hd-M71"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeTab" destination="n1U-pV-UY5" id="pqM-pb-4of"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzg-aY-hp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="139"/>
+            <point key="canvasLocation" x="948" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

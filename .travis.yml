@@ -6,4 +6,4 @@ xcode_sdk: iphonesimulator8.3 #5
 before_script:
     - gem install xcodeproj
 script:
-    - cd buybar-ios && xcodebuild -list && ./recreate_user_schemes.rb && xcodebuild -list && xcodebuild clean build test -sdk iphonesimulator -project buybar.xcodeproj CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
+    - cd buybar-ios && xcodebuild -list && ./recreate_user_schemes.rb && xcodebuild -list && xcodebuild clean build test -sdk iphonesimulator -project buybar.xcodeproj -scheme buybar CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'

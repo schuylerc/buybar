@@ -19,6 +19,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         closeTab.backgroundColor = UIColor.gray
         closeTab.setTitleColor(.white, for: .normal)
+        
+        print(SessionId.getId())
         // Do any additional setup after loading the view.
     }
 
@@ -31,13 +33,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return menuItemArray.count
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
         cell.textLabel?.text = menuItemArray[indexPath.item]
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("I am here")
+        print(menuItemArray[indexPath.row])
+    }
 
     /*
     // MARK: - Navigation

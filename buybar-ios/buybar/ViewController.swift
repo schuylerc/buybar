@@ -85,8 +85,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let readableObject = metadataObject as! AVMetadataMachineReadableCodeObject;
             
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: readableObject.stringValue);
-            
+//            found(code: readableObject.stringValue);
+            SessionId.setId(newId: readableObject.stringValue)
         }
         
         dismiss(animated: true)

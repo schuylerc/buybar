@@ -86,10 +86,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: readableObject.stringValue);
-            performSegue(withIdentifier: "scanSegue", sender: nil)
+            
         }
         
         dismiss(animated: true)
+        performSegue(withIdentifier: "scanSegue", sender: nil)
     }
     
     func found(code: String) {

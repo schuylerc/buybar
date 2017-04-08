@@ -14,6 +14,7 @@
 		032FAA941E98AF4E00840BFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032FAA921E98AF4E00840BFC /* LaunchScreen.storyboard */; };
 		032FAA9F1E98AF4F00840BFC /* buybarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA9E1E98AF4F00840BFC /* buybarTests.swift */; };
 		032FAAAA1E98AF4F00840BFC /* buybarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAA91E98AF4F00840BFC /* buybarUITests.swift */; };
+		032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAB71E98B70000840BFC /* BarBrain.swift */; };
 		D2ADFF458330D90DDEB69DC2 /* Pods_buybar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8F6F07EE1ADCB2196232E /* Pods_buybar.framework */; };
 		E5427F1279779E8F757B7313 /* Pods_buybarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C6BA228661EA8A6AFC41AA /* Pods_buybarTests.framework */; };
 		EC523353500EABD5B99C9D7A /* Pods_buybarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F49785B0F770B72E7E84130 /* Pods_buybarUITests.framework */; };
@@ -50,6 +51,7 @@
 		032FAAA51E98AF4F00840BFC /* buybarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buybarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		032FAAA91E98AF4F00840BFC /* buybarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buybarUITests.swift; sourceTree = "<group>"; };
 		032FAAAB1E98AF4F00840BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		032FAAB71E98B70000840BFC /* BarBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarBrain.swift; sourceTree = "<group>"; };
 		089C22E2B68171207BCB4025 /* Pods-buybarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buybarTests/Pods-buybarTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F49785B0F770B72E7E84130 /* Pods_buybarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buybarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC8F6F07EE1ADCB2196232E /* Pods_buybar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buybar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				032FAA901E98AF4E00840BFC /* Assets.xcassets */,
 				032FAA921E98AF4E00840BFC /* LaunchScreen.storyboard */,
 				032FAA951E98AF4E00840BFC /* Info.plist */,
+				032FAAB71E98B70000840BFC /* BarBrain.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */,
 				032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */,
 				032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */,
 			);
@@ -707,6 +711,7 @@
 				032FAAB01E98AF4F00840BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		032FAAB11E98AF4F00840BFC /* Build configuration list for PBXNativeTarget "buybarTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +720,7 @@
 				032FAAB31E98AF4F00840BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		032FAAB41E98AF4F00840BFC /* Build configuration list for PBXNativeTarget "buybarUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +729,7 @@
 				032FAAB61E98AF4F00840BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

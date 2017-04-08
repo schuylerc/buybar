@@ -1,0 +1,6 @@
+framework module Pods_buybar {
+  umbrella header "Pods-buybar-umbrella.h"
+
+  export *
+  module * { export * }
+}

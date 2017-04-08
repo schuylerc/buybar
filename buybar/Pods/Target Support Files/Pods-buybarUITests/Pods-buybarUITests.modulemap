@@ -1,0 +1,6 @@
+framework module Pods_buybarUITests {
+  umbrella header "Pods-buybarUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

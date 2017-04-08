@@ -1,0 +1,31 @@
+#CUMBIEPORTAL
+For use with web app projects as a starting point
+
+##Deployment Notes
+Ensure mod rewrite is enabled for apache by typing `sudo a2enmod rewrite`
+You will need to restart the apache server for this to work
+
+Make sure all class files begin with a capital letter.
+
+Ensure a database (using the appropriate settings in /application/config/database.php) is available for use
+
+visit `/migrate` in the browser for automatic database setup.
+
+Ensire `AllowOverride` is enabled in apache by editing `/etc/apache2/apache2.conf` with the following configuration:
+
+It was:
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+and change it to;
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```

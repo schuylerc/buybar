@@ -9,7 +9,7 @@ from parser import *
 
 app = Flask(__name__)
 
-mother_url="http://ec2-54-236-35-76.compute-1.amazonaws.com"
+#mother_url=
 
 
 
@@ -45,7 +45,7 @@ def flask():
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
 
-        r = requests.post(mother_url, json=ret)
+        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=ret)
 
         return ret
     return "OK"

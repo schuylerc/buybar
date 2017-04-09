@@ -12,7 +12,6 @@ app = Flask(__name__)
 #mother_url=
 
 
-
 @app.route("/flask", methods=["GET", "POST"])
 def flask():
     if request.method == "POST":
@@ -44,15 +43,23 @@ def flask():
         ret["vehicle_class"] = l.vehicle_class()
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
+
+        print(ret)
         print("Posting:")
-        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(ret))
-        print("Results:")
-        print(r)
-        try:
-            print(r.json())
-        except:
-            print(r.text)
-        print("Returning")
+        client_id="client_58e893bcdaa3258e893bcdaac9"
+        secret="secret_edd35b8ec98a8a4fbf9be85c34"
+        p = request.get_json()["pass"]
+        if p == "True":
+            r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", data=(ret), auth=(client_id, secret))
+            print("Results:")
+            print(r)
+            try:
+                print(r.json())
+            except:
+                print(r.text)
+            print("Returning")
+        ret["id_code"] = ret["customer_identifier"]
+        ret["session_id"] = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/locate_session", data=ret, auth=(client_id, secret)).json()
         return json.dumps(ret)
     return "OK"
 if __name__ == '__main__':

@@ -490,6 +490,13 @@ public $user_id;
 				$query = $this->db->order_by('id', 'DESC')->get_where('sessions', array('id_code' => $_POST['id_code']), 1);
 				$this->json_output($query->row());
 			}
+			
+			public function update_session_email(){
+				if(!isset($_POST['email'])) $this->parameter_error();
+				if(!isset($_POST['session'])) $this->parameter_error();
+				$this->db->update('sessions', array('email' => $_POST['email']), array('id' => $_POST['session']));
+				$this->success_message('Email Updated.');
+			}
 
 
       public function sessions($id = ''){
@@ -550,9 +557,9 @@ public $user_id;
       		}
       		//WITH ID
       		else{
-      			//POST - 
+      			//POST - Update Session (email only)
       			if($this->input->server('REQUEST_METHOD') == 'POST'){
-      				$this->parameter_error();
+							$this->parameter_error();
       			}
       			//GET - 
       			else if($this->input->server('REQUEST_METHOD') == 'GET'){

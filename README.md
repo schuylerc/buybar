@@ -38,3 +38,7 @@ DELETE `/api/v1/sessions`
 POST `/api/v1/locate_session`
 - finds the session the user started at check in
 - Required Fields: id_code
+
+POST `/api/v1/update_session_email`
+- update the email tied to a session
+- Required Fields: session (id), email

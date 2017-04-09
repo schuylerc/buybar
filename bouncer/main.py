@@ -12,7 +12,6 @@ app = Flask(__name__)
 #mother_url=
 
 
-
 @app.route("/flask", methods=["GET", "POST"])
 def flask():
     if request.method == "POST":
@@ -44,8 +43,12 @@ def flask():
         ret["vehicle_class"] = l.vehicle_class()
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
+
+        print(ret)
         print("Posting:")
-        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
+        client_id="client_58e893bcdaa3258e893bcdaac9"
+        secret="secret_edd35b8ec98a8a4fbf9be85c34"
+        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(ret), auth=(client_id, secret))
         print("Results:")
         print(r)
         try:

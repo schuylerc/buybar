@@ -17,6 +17,7 @@
 		032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAB71E98B70000840BFC /* BarBrain.swift */; };
 		A800DC511E99656C00DE57C3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A800DC501E99656C00DE57C3 /* EmailViewController.swift */; };
 		A803F4EA1E99CC63001C36A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803F4E91E99CC63001C36A7 /* MenuViewController.swift */; };
+		A8193D661E99F38900B933F2 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8193D651E99F38900B933F2 /* ClientViewController.swift */; };
 		A8A892741E98E10800D23175 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A892731E98E10800D23175 /* MainViewController.swift */; };
 		A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9D9901E9958D200E27BA9 /* SessionId.swift */; };
 		D2ADFF458330D90DDEB69DC2 /* Pods_buybar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8F6F07EE1ADCB2196232E /* Pods_buybar.framework */; };
@@ -65,6 +66,7 @@
 		9D5F66FA61B3DCFF21036455 /* Pods-buybar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybar.release.xcconfig"; path = "Pods/Target Support Files/Pods-buybar/Pods-buybar.release.xcconfig"; sourceTree = "<group>"; };
 		A800DC501E99656C00DE57C3 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		A803F4E91E99CC63001C36A7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A8193D651E99F38900B933F2 /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		A8A892731E98E10800D23175 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A8D9D9901E9958D200E27BA9 /* SessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionId.swift; sourceTree = "<group>"; };
 		C1072B0F0233A9BF8FE36414 /* Pods-buybar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buybar/Pods-buybar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				A8D9D9901E9958D200E27BA9 /* SessionId.swift */,
 				A800DC501E99656C00DE57C3 /* EmailViewController.swift */,
 				A803F4E91E99CC63001C36A7 /* MenuViewController.swift */,
+				A8193D651E99F38900B933F2 /* ClientViewController.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */,
 				A803F4EA1E99CC63001C36A7 /* MenuViewController.swift in Sources */,
 				032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */,
+				A8193D661E99F38900B933F2 /* ClientViewController.swift in Sources */,
 				032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */,
 				A8A892741E98E10800D23175 /* MainViewController.swift in Sources */,
 			);

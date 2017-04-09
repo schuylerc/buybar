@@ -477,9 +477,30 @@ public $user_id;
 
       		//NO ID
       		if($id == ''){
-      			//POST - 
+      			//POST - Create a new session
       			if($this->input->server('REQUEST_METHOD') == 'POST'){
-      				$this->parameter_error();
+
+							if(isset($_POST['first_name'])) $data['first_name'] = $_POST['first_name'];
+							if(isset($_POST['middle_name'])) $data['middle_name'] = $_POST['middle_name'];
+							if(isset($_POST['last_name'])) $data['last_name'] = $_POST['last_name'];
+							if(isset($_POST['sex'])) $data['sex'] = $_POST['sex'];
+							if(isset($_POST['city'])) $data['city'] = $_POST['city'];
+							if(isset($_POST['state'])) $data['state'] = $_POST['state'];
+							if(isset($_POST['date_of_birth'])) $data['dob'] = $_POST['date_of_birth'];
+							if(isset($_POST['zip_code'])) $data['zip'] = $_POST['zip_code'];
+							if(isset($_POST['eyes'])) $data['eyes'] = $_POST['eyes'];
+							if(isset($_POST['date_issued'])) $data['date_issued'] = $_POST['date_issued'];
+							if(isset($_POST['height'])) $data['height'] = $_POST['height'];
+							if(isset($_POST['raw_license_text'])) $data['raw_string'] = $_POST['raw_license_text'];
+							if(isset($_POST['expiration_date'])) $data['date_exp'] = $_POST['expiration_date'];
+							if(isset($_POST['customer_identifier'])) $data['id_code'] = $_POST['customer_identifier'];
+							if(isset($_POST['street_address'])) $data['street'] = $_POST['street_address'];
+
+							$this->db->insert('session', $data);
+							$new_session_id = $this->db->insert_id();
+							
+							$this->success_message('Session Created with ID of '.$new_session_id);
+
       			}
       			//GET - fetch the list of available items for purchase
       			else if($this->input->server('REQUEST_METHOD') == 'GET'){

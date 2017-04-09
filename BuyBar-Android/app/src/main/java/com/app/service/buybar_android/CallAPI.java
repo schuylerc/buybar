@@ -237,7 +237,7 @@ final public class CallAPI {
 
     public static boolean session(final Context context, final String rawData, final boolean sendToParent) {
         String requestString = "http://ec2-54-236-35-76.compute-1.amazonaws.com:25566/flask";
-        final JsonObjectRequest session = new JsonObjectRequest(Request.Method.GET, requestString, null, new Response.Listener<JSONObject>() {
+        final JsonObjectRequest session = new JsonObjectRequest(Request.Method.POST, requestString, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response){
                 System.out.println("Response: " + response.toString());
@@ -252,19 +252,19 @@ final public class CallAPI {
                 Log.v("API Key", "getUsers Err: " + error.getLocalizedMessage());
 
                 if (error instanceof NetworkError) {
-                    Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof ClientError) {
-                    Toast.makeText(context, "Client Error", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Client Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof ServerError) {
-                    Toast.makeText(context, "Server Error", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Server Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof AuthFailureError) {
-                    Toast.makeText(context, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof ParseError) {
-                    Toast.makeText(context, "Parse Error", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Parse Error", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NoConnectionError) {
-                    Toast.makeText(context, "No Network Connection", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "No Network Connection", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof TimeoutError) {
-                    Toast.makeText(context, "BrotherPortal could not be reached", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "BrotherPortal could not be reached", Toast.LENGTH_SHORT).show();
                 }
             }
         }) {

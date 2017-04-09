@@ -36,6 +36,11 @@ def flask():
             print("CANNOT PRINT")
 
         if not "application/json" in request.headers["content-type"]:
+            try:
+                print("Data:")
+                print(request.content)
+            except:
+                print("Cannot read data")
             return "401"
 
         print("BEGIN PROCESSING")

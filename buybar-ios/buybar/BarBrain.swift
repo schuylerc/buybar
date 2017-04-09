@@ -11,10 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 class BarBrain {
-    static var session_id = 0
+    static var session_id = 1
     static var keys = ["client_id":"client_58e893bcdaa3258e893bcdaac9", "secret_key":"secret_edd35b8ec98a8a4fbf9be85c34"]
     static var menuItemsArray: [MenuItem] = []
     static var driversNumber = ""
+    static var orderNumber = ""
     
     // checks in to bar by starting a session
     // assigns session id to variable in BarBrain
@@ -57,9 +58,13 @@ class BarBrain {
     // sends order to server
     // sends id of order item and id of session
     static func sendOrder(itemToOrder: Int) {
-         Alamofire.request("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1", method: .post, parameters: ["session_id":self.session_id, "order_id":itemToOrder], encoding: URLEncoding.default).validate().responseJSON{
+         Alamofire.request("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/orders", method: .post, parameters: ["session":self.session_id, "item":itemToOrder], encoding: URLEncoding.default).validate().responseJSON{
                     response in switch(response.result){
                     case .success:
+                        print(response.result.value)
+                        var unpacked_json = JSON(response.result.value)
+                        self.orderNumber = unpacked_json["id"].stringValue
+                        print(self.orderNumber)
                         print("success")
                     case .failure(let error):
                         print("error: \(error)")

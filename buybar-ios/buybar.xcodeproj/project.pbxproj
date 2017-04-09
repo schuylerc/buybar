@@ -17,6 +17,8 @@
 		032FAA9F1E98AF4F00840BFC /* buybarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA9E1E98AF4F00840BFC /* buybarTests.swift */; };
 		032FAAAA1E98AF4F00840BFC /* buybarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAA91E98AF4F00840BFC /* buybarUITests.swift */; };
 		032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAAB71E98B70000840BFC /* BarBrain.swift */; };
+		03A9A0641E9A1B5A00E87BF6 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9A0631E9A1B5A00E87BF6 /* ConfirmOrderViewController.swift */; };
+		03A9A0661E9A20FE00E87BF6 /* BouncerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A9A0651E9A20FE00E87BF6 /* BouncerViewController.swift */; };
 		A800DC511E99656C00DE57C3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A800DC501E99656C00DE57C3 /* EmailViewController.swift */; };
 		A803F4EA1E99CC63001C36A7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A803F4E91E99CC63001C36A7 /* MenuViewController.swift */; };
 		A8193D661E99F38900B933F2 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8193D651E99F38900B933F2 /* ClientViewController.swift */; };
@@ -61,6 +63,8 @@
 		032FAAA91E98AF4F00840BFC /* buybarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buybarUITests.swift; sourceTree = "<group>"; };
 		032FAAAB1E98AF4F00840BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		032FAAB71E98B70000840BFC /* BarBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarBrain.swift; sourceTree = "<group>"; };
+		03A9A0631E9A1B5A00E87BF6 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		03A9A0651E9A20FE00E87BF6 /* BouncerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncerViewController.swift; sourceTree = "<group>"; };
 		089C22E2B68171207BCB4025 /* Pods-buybarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buybarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buybarTests/Pods-buybarTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F49785B0F770B72E7E84130 /* Pods_buybarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buybarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC8F6F07EE1ADCB2196232E /* Pods_buybar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buybar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,8 @@
 				A8193D651E99F38900B933F2 /* ClientViewController.swift */,
 				032AF4021E99F96F006B153D /* MenuItem.swift */,
 				032AF4041E9A0E44006B153D /* MyTableViewCell.swift */,
+				03A9A0631E9A1B5A00E87BF6 /* ConfirmOrderViewController.swift */,
+				03A9A0651E9A20FE00E87BF6 /* BouncerViewController.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -476,11 +482,13 @@
 				032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */,
 				A800DC511E99656C00DE57C3 /* EmailViewController.swift in Sources */,
 				A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */,
+				03A9A0661E9A20FE00E87BF6 /* BouncerViewController.swift in Sources */,
 				032AF4051E9A0E44006B153D /* MyTableViewCell.swift in Sources */,
 				A803F4EA1E99CC63001C36A7 /* MenuViewController.swift in Sources */,
 				032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */,
 				A8193D661E99F38900B933F2 /* ClientViewController.swift in Sources */,
 				032AF4031E99F96F006B153D /* MenuItem.swift in Sources */,
+				03A9A0641E9A1B5A00E87BF6 /* ConfirmOrderViewController.swift in Sources */,
 				032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */,
 				A8A892741E98E10800D23175 /* MainViewController.swift in Sources */,
 			);

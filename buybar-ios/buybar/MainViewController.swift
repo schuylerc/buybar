@@ -64,7 +64,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
             UIAlertAction in
             NSLog("Yes Pressed")
-//            BarBrain.sendOrder(itemToOrder: BarBrain.menuItemsArray[indexPath.row].id)
+            BarBrain.sendOrder(itemToOrder: BarBrain.menuItemsArray[indexPath.row].id)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                // Put your code which should be executed with a delay here
+                self.performSegue(withIdentifier: "confirmOrderSegue", sender: nil)
+            })
+            
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
             UIAlertAction in

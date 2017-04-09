@@ -8,10 +8,10 @@
 
 <table class="table table-striped">
   <tr>
-    <th style="width: 75px">ID</th>
-    <th style="width: 300px">Customer</th>
+    <th style="width: 75px">#</th>
+    <th style="width: 250px">Customer</th>
     <th>Order</th>
-    <th style="width: 170px">Actions</th>
+    <th style="width: 145px">Actions</th>
   </tr>
   <?PHP foreach($orders as $order): ?>
   <tr id="order<?PHP echo $order->id; ?>">

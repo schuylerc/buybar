@@ -12,6 +12,7 @@ This modules contains the the Drivers License parsing code.
 import re
 import datetime
 from datetime import timedelta
+from dateutil.relativedelta import *
 
 class CouldNotParseError(RuntimeError):
     """The license text could not be parsed."""

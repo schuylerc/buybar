@@ -21,6 +21,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -37,6 +38,9 @@ import java.util.Objects;
  */
 
 final public class CallAPI {
+
+    static String session_id = "1";
+
 
     static public boolean getList(final Context context) {
         String requestString = "http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/menu_items";
@@ -152,7 +156,7 @@ final public class CallAPI {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("item", id + "");
-                params.put("session", 1 + "");
+                params.put("session", session_id + "");
                 return params;
             }
 
@@ -171,30 +175,76 @@ final public class CallAPI {
         Volley.newRequestQueue(context).add(makeOrder);
     }
 
+    static final public void updateEmail(final Context context, final Activity activity, final String email){
 
-    ///api/v1/sessions
-    public static boolean session(final Context context) {
-        String requestString = "http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/menu_items";
-        final JsonArrayRequest session = new JsonArrayRequest(Request.Method.GET, requestString, null, new Response.Listener<JSONArray>() {
+        String requestString = "http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/update_session_email";
+
+        final StringRequest updateEmail = new StringRequest(Request.Method.POST, requestString, new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONArray response) {
-//                //Log.v("API Key", requestType + "/getList Response: " + response.toString());
-                System.out.println("Response: " + response.toString());
+            public void onResponse(String response) {
+                Log.v("API Key", "Response: " + response.toString());
                 try {
-                    for (int i = 0; i < response.length(); i++) {
+                    JSONObject resJSON = new JSONObject(response.toString());
+                } catch (JSONException js) {
+                    Log.e("API JSON ERROR", js.getLocalizedMessage());
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.v("API Key", "Err: " + error.getLocalizedMessage());
 
-                        JSONObject jsonObject = response.getJSONObject(i);
+                if (error instanceof NetworkError) {
+                    Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof ClientError) {
+                    Toast.makeText(context, "Client Error", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof ServerError) {
+                    Toast.makeText(context, "Server Error", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof AuthFailureError) {
+                    Toast.makeText(context, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof ParseError) {
+                    Toast.makeText(context, "Parse Error", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof NoConnectionError) {
+                    Toast.makeText(context, "No Network Connection", Toast.LENGTH_SHORT).show();
+                } else if (error instanceof TimeoutError) {
+                    Toast.makeText(context, "BrotherPortal could not be reached", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", email);
+                params.put("session", session_id + "");
+                return params;
+            }
 
-                        int id = Integer.parseInt(jsonObject.get("id").toString());
-                        String title = jsonObject.get("title").toString();
-                        int price = Integer.parseInt(jsonObject.get("price").toString());
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                String userCredentials = "client_58e893bcdaa3258e893bcdaac9" + ":" + "secret_edd35b8ec98a8a4fbf9be85c34";
 
-                        MainActivity.adapter.addItem(new Item(id, title, price));
-                    }
+                String basicAuth = "Basic " + new String(Base64.encode(userCredentials.getBytes(), Base64.NO_WRAP));
 
-                    MainActivity.applyItemList();
+                params.put("Authorization", basicAuth);
 
-                } catch (JSONException jse) {}
+                return params;
+            }
+        };
+        Volley.newRequestQueue(context).add(updateEmail);
+    }
+
+
+    public static boolean session(final Context context, final String rawData, final boolean sendToParent) {
+        String requestString = "http://ec2-54-236-35-76.compute-1.amazonaws.com:25566/flask";
+        final JsonObjectRequest session = new JsonObjectRequest(Request.Method.GET, requestString, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response){
+                System.out.println("Response: " + response.toString());
+
+                try {
+                    session_id = response.get("session_id").toString();
+                }catch(JSONException je){}
             }
         }, new Response.ErrorListener() {
             @Override
@@ -221,6 +271,8 @@ final public class CallAPI {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
+                params.put("data", rawData);
+                params.put("pass", ""+sendToParent);
                 return params;
             }
 

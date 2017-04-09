@@ -69,6 +69,8 @@ public class ScannerActivity extends Activity {
                 Log.d("SCAN_RESULT", contents);
                 Log.d("SCAN_RESULT_FORMAT", format);
 
+                CallAPI.session(ScannerActivity.this, contents, true);
+
                 Intent collectInfo = new Intent(this, CollectInfoActivity.class);
                 startActivity(collectInfo);
                 this.finish();

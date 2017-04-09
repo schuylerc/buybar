@@ -518,8 +518,13 @@ public $user_id;
 							if(isset($_POST['expiration_date'])) $data['date_exp'] = $_POST['expiration_date'];
 							if(isset($_POST['customer_identifier'])) $data['id_code'] = $_POST['customer_identifier'];
 							if(isset($_POST['street_address'])) $data['street'] = $_POST['street_address'];
+							if(isset($_POST['email'])) $data['email'] = $_POST['email'];
+							
+							if(count($data)==0) $this->parameter_error();
+							
+							$data = (array) $data;
 
-							$this->db->insert('session', $data);
+							$this->db->insert('sessions', $data);
 							$new_session_id = $this->db->insert_id();
 							
 							$output = array('message' => 'Session created successfully', 'id' => $new_session_id);

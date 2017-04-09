@@ -16,7 +16,7 @@ app = Flask(__name__)
 def flask():
     if request.method == "POST":
 
-        print(request.text)
+        print(request.get_json())
 
         data=request.get_json()["data"]
         l = License(data)

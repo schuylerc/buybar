@@ -424,12 +424,22 @@ public $user_id;
     		if($id == ''){
     			//POST - New Order
     			if($this->input->server('REQUEST_METHOD') == 'POST'){
-    				if(!isset($_POST['session_id']) && !isset($_POST['item_id']))$this->parameter_error();
+    				if(!isset($_POST['session']) || !isset($_POST['item'])) $this->parameter_error();
 						
-						$data['session_id'] = $_POST['session_id'];
-						$data['item_id'] = $_POST['item_id'];
+						// if(isset($_POST['session_id'])) $data['session_id'] = $_POST['session_id'];
+						// if(isset($_POST['item_id'])) $data['item_id'] = $_POST['item_id'];
+						$data = array(
+							'session_id' => $_POST['session'],
+							'item_id' => $_POST['item']
+						);
 						
 						$this->db->insert('orders', $data);
+						
+						$new_order_id = $this->db->insert_id();
+						
+						$output = array('message' => 'Order created successfully', 'id' => $new_order_id);
+						$this->json_output($output);
+						
     			}
     			//GET - fetch the list of available items for purchase
     			else if($this->input->server('REQUEST_METHOD') == 'GET'){
@@ -484,6 +494,8 @@ public $user_id;
       		if($id == ''){
       			//POST - Create a new session
       			if($this->input->server('REQUEST_METHOD') == 'POST'){
+							
+							$data = array();
 
 							if(isset($_POST['first_name'])) $data['first_name'] = $_POST['first_name'];
 							if(isset($_POST['middle_name'])) $data['middle_name'] = $_POST['middle_name'];
@@ -504,7 +516,8 @@ public $user_id;
 							$this->db->insert('session', $data);
 							$new_session_id = $this->db->insert_id();
 							
-							$this->success_message('Session Created with ID of '.$new_session_id);
+							$output = array('message' => 'Session created successfully', 'id' => $new_session_id);
+							$this->json_output($output);
 
       			}
       			//GET - fetch the list of available items for purchase

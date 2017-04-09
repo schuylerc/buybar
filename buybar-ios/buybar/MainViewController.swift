@@ -17,7 +17,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        BarBrain.getMenuItems()
         closeTab.backgroundColor = UIColor.gray
         closeTab.setTitleColor(.white, for: .normal)
         
@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemArray.count
+        return BarBrain.menuItemsArray.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -46,7 +46,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
-        cell.textLabel?.text = menuItemArray[indexPath.item]
+        cell.textLabel?.text = BarBrain.menuItemsArray[indexPath.item].title
         return cell
     }
     
@@ -64,6 +64,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func close(_ sender: Any) {
         print("button pressed")
+//        BarBrain.getMenuItems()
+        print(BarBrain.menuItemsArray)
+        self.tableView.reloadData()
+        print("done with get menu*****************")
+//        print(x[0].title)
     }
     /*
     // MARK: - Navigation

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032836E91E99A1960000164E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032836E81E99A1960000164E /* MenuItem.swift */; };
 		032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA891E98AF4E00840BFC /* AppDelegate.swift */; };
 		032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA8B1E98AF4E00840BFC /* ViewController.swift */; };
 		032FAA8F1E98AF4E00840BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032FAA8D1E98AF4E00840BFC /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032836E81E99A1960000164E /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		032FAA861E98AF4E00840BFC /* buybar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buybar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032FAA891E98AF4E00840BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		032FAA8B1E98AF4E00840BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				A8A892731E98E10800D23175 /* MainViewController.swift */,
 				A8D9D9901E9958D200E27BA9 /* SessionId.swift */,
 				A800DC501E99656C00DE57C3 /* EmailViewController.swift */,
+				032836E81E99A1960000164E /* MenuItem.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032836E91E99A1960000164E /* MenuItem.swift in Sources */,
 				032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */,
 				A800DC511E99656C00DE57C3 /* EmailViewController.swift in Sources */,
 				A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */,

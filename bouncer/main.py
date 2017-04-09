@@ -45,6 +45,8 @@ def flask():
         ret["vehicle_class"] = l.vehicle_class()
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
+
+        print(ret)
         print("Posting:")
         r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(ret), auth=(client_id, secret))
         print("Results:")

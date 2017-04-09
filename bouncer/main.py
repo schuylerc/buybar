@@ -58,6 +58,8 @@ def flask():
             except:
                 print(r.text)
             print("Returning")
+        ret["id_code"] = ret["customer_identifier"]
+        ret["session_id"] = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/locate_session", data=ret, auth=(client_id, secret)).json()
         return json.dumps(ret)
     return "OK"
 if __name__ == '__main__':

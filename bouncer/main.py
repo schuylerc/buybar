@@ -35,7 +35,7 @@ def flask():
         except:
             print("CANNOT PRINT")
 
-        if not request.headers["content-type"] == "application/json":
+        if not request.headers["content-type"].toLowerCase().contains("application/json")
             return "401"
 
         print("BEGIN PROCESSING")

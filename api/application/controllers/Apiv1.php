@@ -484,6 +484,12 @@ public $user_id;
 
     	}
 
+			public function locate_session(){
+				if(!isset($_POST['id_code'])) $this->parameter_error();
+				
+				$query = $this->db->order_by('id', 'DESC')->get_where('sessions', array('id_code' => $_POST['id_code']), 1);
+				$this->json_output($query->row());
+			}
 
 
       public function sessions($id = ''){
@@ -554,7 +560,7 @@ public $user_id;
       			//DELETE - 
       			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
       				
-							$this->db->update('sessions' array('active'=> 0), array('id' => $id));
+							$this->db->update('sessions', array('active' => 0), array('id' => $id));
 							
 							//send mail
 							

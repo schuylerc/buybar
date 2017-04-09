@@ -35,3 +35,6 @@ POST `/api/v1/sessions`
 DELETE `/api/v1/sessions`
 - removes the session from the system
 
+POST `/api/v1/locate_session`
+- finds the session the user started at check in
+- Required Fields: id_code

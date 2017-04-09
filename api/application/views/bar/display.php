@@ -1,5 +1,9 @@
 
-
+<style>
+body { 
+    padding-top: 51px;
+}
+</style>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -57,9 +61,3 @@ function readyItem(id){
   window.location = '/bar/ready/' + id;
 }
 </script>
-
-<style>
-body { 
-    padding-top: 51px;
-}
-</style>

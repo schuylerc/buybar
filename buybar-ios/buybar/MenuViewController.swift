@@ -31,6 +31,40 @@ class MenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func pinRequest(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: "Login", message: "Please enter your password:", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            if (alertController.textFields![0] as? UITextField) != nil {
+                
+                if(alertController.textFields![0].text == "password"){
+                    print("True")
+                    self.performSegue(withIdentifier: "bouncer", sender: self)
+                }
+                else{
+                    print("False")
+                }
+                // store your data
+//                UserDefaults.standard.set(field.text, forKey: "userPin")
+//                UserDefaults.standard.synchronize()
+            } else {
+                // user did not fill field
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Password"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

@@ -17,13 +17,22 @@ def flask():
     if request.method == "POST":
 
         print("Printing Details")
-        print("JSON:")
-        print(request.get_json())
-        print("TEXT:")
-        print(request.text)
-        print("HEADERS")
-        print(request.headers["content-type"])
 
+        try:
+            print("JSON:")
+            print(request.get_json())
+        except:
+            print("CANNOT PRINT")
+        try:
+            print("TEXT:")
+            print(request.text)
+        except:
+            print("CANNOT PRINT")
+        try:
+            print("HEADERS")
+            print(request.headers["content-type"])
+        except:
+            print("CANNOT PRINT")
 
         print("BEGIN PROCESSING")
         data=request.get_json()["data"]
@@ -76,7 +85,7 @@ def flask():
         ret["session_id"] = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/locate_session", data=ret, auth=(client_id, secret)).json()
         print("RETURNING SUCCESSFULLY")
         return json.dumps(ret)
-        
+
     return "OK"
 if __name__ == '__main__':
     print('')

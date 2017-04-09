@@ -34,6 +34,9 @@ def flask():
         except:
             print("CANNOT PRINT")
 
+        if request.headers["content-type"] not "application/json":
+            return "401"
+
         print("BEGIN PROCESSING")
         data=request.get_json()["data"]
         l = License(data)

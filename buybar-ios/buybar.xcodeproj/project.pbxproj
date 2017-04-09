@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032AF4031E99F96F006B153D /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AF4021E99F96F006B153D /* MenuItem.swift */; };
+		032AF4051E9A0E44006B153D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032AF4041E9A0E44006B153D /* MyTableViewCell.swift */; };
 		032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA891E98AF4E00840BFC /* AppDelegate.swift */; };
 		032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAA8B1E98AF4E00840BFC /* ViewController.swift */; };
 		032FAA8F1E98AF4E00840BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032FAA8D1E98AF4E00840BFC /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032AF4021E99F96F006B153D /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		032AF4041E9A0E44006B153D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		032FAA861E98AF4E00840BFC /* buybar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buybar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032FAA891E98AF4E00840BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		032FAA8B1E98AF4E00840BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				A800DC501E99656C00DE57C3 /* EmailViewController.swift */,
 				A803F4E91E99CC63001C36A7 /* MenuViewController.swift */,
 				A8193D651E99F38900B933F2 /* ClientViewController.swift */,
+				032AF4021E99F96F006B153D /* MenuItem.swift */,
+				032AF4041E9A0E44006B153D /* MyTableViewCell.swift */,
 			);
 			path = buybar;
 			sourceTree = "<group>";
@@ -260,7 +266,7 @@
 				TargetAttributes = {
 					032FAA851E98AF4E00840BFC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4P5B26VHR4;
+						DevelopmentTeam = 96YCEMN4BV;
 						ProvisioningStyle = Automatic;
 					};
 					032FAA991E98AF4F00840BFC = {
@@ -470,9 +476,11 @@
 				032FAAB81E98B70000840BFC /* BarBrain.swift in Sources */,
 				A800DC511E99656C00DE57C3 /* EmailViewController.swift in Sources */,
 				A8D9D9911E9958D200E27BA9 /* SessionId.swift in Sources */,
+				032AF4051E9A0E44006B153D /* MyTableViewCell.swift in Sources */,
 				A803F4EA1E99CC63001C36A7 /* MenuViewController.swift in Sources */,
 				032FAA8C1E98AF4E00840BFC /* ViewController.swift in Sources */,
 				A8193D661E99F38900B933F2 /* ClientViewController.swift in Sources */,
+				032AF4031E99F96F006B153D /* MenuItem.swift in Sources */,
 				032FAA8A1E98AF4E00840BFC /* AppDelegate.swift in Sources */,
 				A8A892741E98E10800D23175 /* MainViewController.swift in Sources */,
 			);
@@ -627,11 +635,11 @@
 			baseConfigurationReference = C1072B0F0233A9BF8FE36414 /* Pods-buybar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P5B26VHR4;
+				DEVELOPMENT_TEAM = 96YCEMN4BV;
 				INFOPLIST_FILE = buybar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -642,11 +650,11 @@
 			baseConfigurationReference = 9D5F66FA61B3DCFF21036455 /* Pods-buybar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4P5B26VHR4;
+				DEVELOPMENT_TEAM = 96YCEMN4BV;
 				INFOPLIST_FILE = buybar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybarapp;
+				PRODUCT_BUNDLE_IDENTIFIER = lwtb.buybar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

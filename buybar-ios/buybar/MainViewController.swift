@@ -18,6 +18,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        BarBrain.getMenuItems()
         closeTab.backgroundColor = UIColor.gray
         closeTab.setTitleColor(.white, for: .normal)
         
@@ -39,7 +40,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemArray.count
+        return BarBrain.menuItemsArray.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,7 +49,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
-        cell.textLabel?.text = menuItemArray[indexPath.item]
+        cell.textLabel?.text = BarBrain.menuItemsArray[indexPath.item].title
         return cell
     }
     
@@ -59,10 +60,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let row = indexPath.row
         print("Row: \(row)")
         
-        let alert = UIAlertController(title: "Alert", message: "Purchase " + menuItemArray[indexPath.row] + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Alert", message: "Purchase " + BarBrain.menuItemsArray[indexPath.row].title + "?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
             UIAlertAction in
             NSLog("Yes Pressed")
+//            BarBrain.sendOrder(itemToOrder: BarBrain.menuItemsArray[indexPath.row].id)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
             UIAlertAction in
@@ -77,7 +79,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     @IBAction func close(_ sender: Any) {
+//        BarBrain.getMenuItems()
+//        self.tableView.reloadData()
         print("button pressed")
+        
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to check out?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
             UIAlertAction in

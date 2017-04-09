@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uJM-cd-guI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uJM-cd-guI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,29 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bct-Wx-5Gt">
-                                <rect key="frame" x="129" y="319" width="116" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-wg-sYR">
+                                <rect key="frame" x="16" y="88" width="169" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="8IH-8X-5OW"/>
-                                    <constraint firstAttribute="height" constant="30" id="lO9-yE-ctG"/>
-                                </constraints>
-                                <state key="normal" title="Check In"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7DZ-xd-2DZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-wg-sYR">
-                                <rect key="frame" x="137" y="88" width="100" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="VGF-Tl-ZEI"/>
-                                    <constraint firstAttribute="height" constant="50" id="zgE-ZX-GGC"/>
+                                    <constraint firstAttribute="height" constant="65" id="e0D-TP-9Kf"/>
+                                    <constraint firstAttribute="width" constant="169" id="xps-da-pmC"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="BuyBar">
+                                    <fragment content="BUY">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="50" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7hG-ev-x81">
+                                <rect key="frame" x="184" y="88" width="175" height="65"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="BAR">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="50" name="Helvetica-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -59,15 +61,30 @@
                                     <action selector="pinRequest:" destination="uJM-cd-guI" eventType="touchUpInside" id="fRg-Qv-ZfK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bct-Wx-5Gt">
+                                <rect key="frame" x="127" y="394" width="120" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Check In"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7DZ-xd-2DZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="centerX" secondItem="SjB-tZ-Krw" secondAttribute="centerX" id="89c-9i-fvZ"/>
+                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="top" secondItem="hZ3-3u-qMt" secondAttribute="bottom" constant="68" id="Ccw-HG-ewK"/>
+                            <constraint firstItem="7hG-ev-x81" firstAttribute="centerY" secondItem="Ltg-wg-sYR" secondAttribute="centerY" id="DWF-3t-Uf6"/>
                             <constraint firstItem="hbv-0K-Fgs" firstAttribute="trailing" secondItem="SjB-tZ-Krw" secondAttribute="trailingMargin" id="LMH-UD-tGI"/>
-                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="centerX" secondItem="bct-Wx-5Gt" secondAttribute="centerX" id="WG6-n2-vkg"/>
-                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="centerY" secondItem="SjB-tZ-Krw" secondAttribute="centerY" id="Xq1-25-a6y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bct-Wx-5Gt" secondAttribute="trailing" constant="112" id="Lom-ml-nOJ"/>
+                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="leading" secondItem="SjB-tZ-Krw" secondAttribute="leadingMargin" constant="111" id="NIW-w8-PQk"/>
+                            <constraint firstItem="7hG-ev-x81" firstAttribute="leading" secondItem="Ltg-wg-sYR" secondAttribute="trailing" constant="-1" id="XvG-gc-5JJ"/>
+                            <constraint firstItem="7hG-ev-x81" firstAttribute="height" secondItem="Ltg-wg-sYR" secondAttribute="height" id="ZxH-21-9qz"/>
+                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="leading" secondItem="SjB-tZ-Krw" secondAttribute="leadingMargin" id="atV-iC-K7o"/>
+                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="baseline" secondItem="7hG-ev-x81" secondAttribute="baseline" id="bw5-Vv-NFQ"/>
                             <constraint firstAttribute="bottom" secondItem="hbv-0K-Fgs" secondAttribute="bottom" constant="20" symbolic="YES" id="div-Sh-hZn"/>
-                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="top" secondItem="hZ3-3u-qMt" secondAttribute="bottom" constant="68" id="w5C-BZ-P6c"/>
+                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="top" secondItem="7hG-ev-x81" secondAttribute="bottom" constant="241" id="fek-33-Qy4"/>
+                            <constraint firstItem="7hG-ev-x81" firstAttribute="width" secondItem="Ltg-wg-sYR" secondAttribute="width" constant="6" id="uy5-QV-jEg"/>
+                            <constraint firstItem="7hG-ev-x81" firstAttribute="trailing" secondItem="hbv-0K-Fgs" secondAttribute="trailing" id="y6x-jv-2jt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,8 +109,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-Bn-4bC">
-                                <rect key="frame" x="157" y="318" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-Bn-4bC">
+                                <rect key="frame" x="127" y="308" width="120" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Check In"/>
                                 <connections>
                                     <segue destination="qKd-Ot-Uwu" kind="show" identifier="checkInClient" id="7d4-fF-aGQ"/>
@@ -242,6 +260,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOz-ev-cTZ" id="coC-Hx-GPW">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsE-4o-NLU">
+                                                    <rect key="frame" x="33" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGe-zZ-JIr">
+                                                    <rect key="frame" x="264" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -273,6 +307,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="o2Q-Gf-ZYw"/>
+        <segue reference="eoB-rp-Fzm"/>
     </inferredMetricsTieBreakers>
 </document>

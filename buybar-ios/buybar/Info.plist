@@ -22,6 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>ec2-54-236-35-76.compute-1.amazonaws.com</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs to use your camera</string>
 	<key>UILaunchStoryboardName</key>

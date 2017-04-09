@@ -41,7 +41,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             captureSession.addOutput(metadataOutput)
             
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypePDF417Code]
+            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypePDF417Code]
         } else {
             failed()
             return

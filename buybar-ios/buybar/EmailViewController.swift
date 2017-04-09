@@ -34,7 +34,7 @@ class EmailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        BarBrain.getMenuItems()
         self.view.backgroundColor = UIColor.black
         submitInfo.backgroundColor = UIColor.gray
         submitInfo.setTitleColor(UIColor.white, for: UIControlState.normal)

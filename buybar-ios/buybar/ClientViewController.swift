@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  ClientCheckInViewController.swift
 //  buybar
 //
-//  Created by Joshua Wagner on 4/8/17.
+//  Created by iostest on 4/9/17.
 //  Copyright © 2017 Joshua Wagner. All rights reserved.
 //
 
 import AVFoundation
 import UIKit
 
-class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ClientViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -41,7 +41,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             captureSession.addOutput(metadataOutput)
             
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypePDF417Code]
+            metadataOutput.metadataObjectTypes = [AVMetadataObjectTypePDF417Code]
         } else {
             failed()
             return
@@ -85,13 +85,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let readableObject = metadataObject as! AVMetadataMachineReadableCodeObject;
             
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-//            found(code: readableObject.stringValue);
-            SessionId.setId(newId: readableObject.stringValue)
+            found(code: readableObject.stringValue);
+//            SessionId.setId(newId: readableObject.stringValue)
         }
         
-        performSegue(withIdentifier: "scanSegue", sender: self)
-//        dismiss(animated: true)
-
+        performSegue(withIdentifier: "backToClientInfo", sender: self)
+        //        dismiss(animated: true)
+        
     }
     
     func found(code: String) {

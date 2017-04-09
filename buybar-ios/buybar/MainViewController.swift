@@ -27,6 +27,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.view.backgroundColor = UIColor.black
 
         // Do any additional setup after loading the view.
     }

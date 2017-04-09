@@ -12,6 +12,7 @@ class EmailViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var submitInfo: UIButton!
     
     @IBAction func submit(_ sender: UIButton) {
         guard let eml = email.text else {
@@ -33,6 +34,10 @@ class EmailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.black
+        submitInfo.backgroundColor = UIColor.gray
+        submitInfo.setTitleColor(UIColor.white, for: UIControlState.normal)
 
         // Do any additional setup after loading the view.
     }

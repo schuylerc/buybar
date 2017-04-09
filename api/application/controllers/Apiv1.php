@@ -422,9 +422,14 @@ public $user_id;
 
     		//NO ID
     		if($id == ''){
-    			//POST - 
+    			//POST - New Order
     			if($this->input->server('REQUEST_METHOD') == 'POST'){
-    				$this->parameter_error();
+    				if(!isset($_POST['session_id']) && !isset($_POST['item_id']))$this->parameter_error();
+						
+						$data['session_id'] = $_POST['session_id'];
+						$data['item_id'] = $_POST['item_id'];
+						
+						$this->db->insert('orders', $data);
     			}
     			//GET - fetch the list of available items for purchase
     			else if($this->input->server('REQUEST_METHOD') == 'GET'){

@@ -43,6 +43,8 @@ def flask():
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
         return ret
+    return "OK"
 if __name__ == '__main__':
     print('')
+    app.debug=True
     app.run(host='0.0.0.0', port=25566)

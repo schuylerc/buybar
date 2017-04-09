@@ -48,7 +48,7 @@ def flask():
 
         print(ret)
         print("Posting:")
-        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(ret), auth=(client_id, secret))
+        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(json.dumps(ret)), auth=(client_id, secret))
         print("Results:")
         print(r)
         try:

@@ -46,7 +46,10 @@ def flask():
         ret["restrictions"] = l.restrictions()
 
         r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
-        print(r.json())
+        try:
+            print(r.json())
+        except:
+            print(r.text)
 
         return json.dumps(ret)
     return "OK"

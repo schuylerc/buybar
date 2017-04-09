@@ -45,9 +45,9 @@ def flask():
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
 
-        #r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=json.dumps(ret))
+        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
 
-        return str(ret)
+        return json.dumps(ret)
     return "OK"
 if __name__ == '__main__':
     print('')

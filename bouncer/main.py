@@ -15,6 +15,9 @@ app = Flask(__name__)
 @app.route("/flask", methods=["GET", "POST"])
 def flask():
     if request.method == "POST":
+
+        print(request.text)
+
         data=request.get_json()["data"]
         l = License(data)
         ret={}

@@ -86,6 +86,7 @@ class ClientViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: readableObject.stringValue);
+            BarBrain.getIsOver18(data: readableObject.stringValue, toSave: "true")
 //            SessionId.setId(newId: readableObject.stringValue)
         }
         

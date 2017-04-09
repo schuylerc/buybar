@@ -84,6 +84,21 @@ class BarBrain {
         //        }
     }
     
+    static func getIsOver18(data: String, toSave: String){
+        Alamofire.request("http://ec2-54-236-35-76.compute-1.amazonaws.com:25566/flask", method: .post, parameters: ["data": data, "pass": toSave], encoding: JSONEncoding.default).validate().responseJSON{
+            response in switch(response.result){
+            case .success:
+                print(response.result.value)
+                var unpacked_json = JSON(response.result.value)
+                print(unpacked_json["is_over_18"].stringValue)
+//                print(self.orderNumber)
+                print("success")
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+    }
+    
     
     
 }

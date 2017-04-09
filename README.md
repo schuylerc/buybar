@@ -32,3 +32,6 @@ POST `/api/v1/orders`
 POST `/api/v1/sessions`
 - creates a new session by accepting parsed ID info
 
+DELETE `/api/v1/sessions`
+- removes the session from the system
+

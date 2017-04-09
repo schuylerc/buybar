@@ -553,7 +553,33 @@ public $user_id;
       			}
       			//DELETE - 
       			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
-      				$this->parameter_error();
+      				
+							$this->db->update('sessions' array('active'=> 0), array('id' => $id));
+							
+							//send mail
+							
+							$config = Array(
+									'protocol' => 'smtp',
+									'smtp_host' => 'ssl://smtp.sparkpostmail.com',
+									'smtp_port' => 587,
+									'smtp_user' => 'SMTP_Injection',
+									'smtp_pass' => '1b61e8a4571e70c6681f607b820d5a00b9d6d516',
+									'mailtype'  => 'html', 
+									'charset'   => 'iso-8859-1'
+							);
+							$this->load->library('email', $config);
+							$this->email->set_newline("\r\n");
+
+							// Set to, from, message, etc.
+							$this->email->from('notifications@buybar.cumbiesites.com', 'BUYBAR');
+							$this->email->to($order->email);
+							$this->email->subject('Closed Check Receipt');
+							$this->email->message('<html><body>Hi '.$order->first_name.'! This email is to indicate that your tab at the bar is now officially closed.<br>Thanks,<br><br>The <strong>BUY</strong>BAR Team</body></html>');
+
+							$result = $this->email->send();
+							
+							$this->success_message('Session was marked as inactive.');
+							
       			}
       			//NONE
       			else {

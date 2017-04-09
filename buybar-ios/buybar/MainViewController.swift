@@ -22,6 +22,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         closeTab.setTitleColor(.white, for: .normal)
         
         print(SessionId.getId())
+        print(SessionId.getEmail())
+        print(SessionId.getPhoneNumber())
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+
         // Do any additional setup after loading the view.
     }
 
@@ -45,10 +51,47 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("I am here")
-        print(menuItemArray[indexPath.row])
-    }
+        
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        
+        let row = indexPath.row
+        print("Row: \(row)")
+        
+        let alert = UIAlertController(title: "Alert", message: "Purchase " + menuItemArray[indexPath.row] + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Yes Pressed")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
 
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func close(_ sender: Any) {
+        print("button pressed")
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to check out?", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Yes Pressed")
+            self.performSegue(withIdentifier: "backToBeg", sender: self)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

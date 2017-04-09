@@ -89,8 +89,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             SessionId.setId(newId: readableObject.stringValue)
         }
         
-        dismiss(animated: true)
-        performSegue(withIdentifier: "scanSegue", sender: nil)
+        performSegue(withIdentifier: "scanSegue", sender: self)
+//        dismiss(animated: true)
+
     }
     
     func found(code: String) {

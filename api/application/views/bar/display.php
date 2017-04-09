@@ -5,6 +5,24 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>BUY</strong>BAR Orders</a>
+    </div>
+
+  </div><!-- /.container-fluid -->
+</nav>
+  
+  
 
 <table class="table table-striped">
   <tr>
@@ -39,3 +57,9 @@ function readyItem(id){
   window.location = '/bar/ready/' + id;
 }
 </script>
+
+<style>
+body { 
+    padding-top: 51px;
+}
+</style>

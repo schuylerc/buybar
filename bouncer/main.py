@@ -9,6 +9,8 @@ from parser import *
 
 app = Flask(__name__)
 
+mother_url="http://ec2-54-236-35-76.compute-1.amazonaws.com"
+
 
 
 @app.route("/flask", methods=["GET", "POST"])
@@ -42,6 +44,9 @@ def flask():
         ret["vehicle_class"] = l.vehicle_class()
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
+
+        r = requests.post(mother_url, json=ret)
+
         return ret
     return "OK"
 if __name__ == '__main__':

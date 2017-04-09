@@ -424,12 +424,22 @@ public $user_id;
     		if($id == ''){
     			//POST - New Order
     			if($this->input->server('REQUEST_METHOD') == 'POST'){
-    				if(!isset($_POST['session_id']) && !isset($_POST['item_id']))$this->parameter_error();
+    				if(!isset($_POST['session']) || !isset($_POST['item'])) $this->parameter_error();
 						
-						$data['session_id'] = $_POST['session_id'];
-						$data['item_id'] = $_POST['item_id'];
+						// if(isset($_POST['session_id'])) $data['session_id'] = $_POST['session_id'];
+						// if(isset($_POST['item_id'])) $data['item_id'] = $_POST['item_id'];
+						$data = array(
+							'session_id' => $_POST['session'],
+							'item_id' => $_POST['item']
+						);
 						
 						$this->db->insert('orders', $data);
+						
+						$new_order_id = $this->db->insert_id();
+						
+						$output = array('message' => 'Order created successfully', 'id' => $new_order_id);
+						$this->json_output($output);
+						
     			}
     			//GET - fetch the list of available items for purchase
     			else if($this->input->server('REQUEST_METHOD') == 'GET'){
@@ -474,6 +484,19 @@ public $user_id;
 
     	}
 
+			public function locate_session(){
+				if(!isset($_POST['id_code'])) $this->parameter_error();
+				
+				$query = $this->db->order_by('id', 'DESC')->get_where('sessions', array('id_code' => $_POST['id_code']), 1);
+				$this->json_output($query->row());
+			}
+			
+			public function update_session_email(){
+				if(!isset($_POST['email'])) $this->parameter_error();
+				if(!isset($_POST['session'])) $this->parameter_error();
+				$this->db->update('sessions', array('email' => $_POST['email']), array('id' => $_POST['session']));
+				$this->success_message('Email Updated.');
+			}
 
 
       public function sessions($id = ''){
@@ -484,6 +507,8 @@ public $user_id;
       		if($id == ''){
       			//POST - Create a new session
       			if($this->input->server('REQUEST_METHOD') == 'POST'){
+							
+							$data = array();
 
 							if(isset($_POST['first_name'])) $data['first_name'] = $_POST['first_name'];
 							if(isset($_POST['middle_name'])) $data['middle_name'] = $_POST['middle_name'];
@@ -500,11 +525,17 @@ public $user_id;
 							if(isset($_POST['expiration_date'])) $data['date_exp'] = $_POST['expiration_date'];
 							if(isset($_POST['customer_identifier'])) $data['id_code'] = $_POST['customer_identifier'];
 							if(isset($_POST['street_address'])) $data['street'] = $_POST['street_address'];
+							if(isset($_POST['email'])) $data['email'] = $_POST['email'];
+							
+							if(count($data)==0) $this->parameter_error();
+							
+							$data = (array) $data;
 
-							$this->db->insert('session', $data);
+							$this->db->insert('sessions', $data);
 							$new_session_id = $this->db->insert_id();
 							
-							$this->success_message('Session Created with ID of '.$new_session_id);
+							$output = array('message' => 'Session created successfully', 'id' => $new_session_id);
+							$this->json_output($output);
 
       			}
       			//GET - fetch the list of available items for purchase
@@ -526,9 +557,9 @@ public $user_id;
       		}
       		//WITH ID
       		else{
-      			//POST - 
+      			//POST - Update Session (email only)
       			if($this->input->server('REQUEST_METHOD') == 'POST'){
-      				$this->parameter_error();
+							$this->parameter_error();
       			}
       			//GET - 
       			else if($this->input->server('REQUEST_METHOD') == 'GET'){
@@ -540,7 +571,33 @@ public $user_id;
       			}
       			//DELETE - 
       			else if($this->input->server('REQUEST_METHOD') == 'DELETE'){
-      				$this->parameter_error();
+      				
+							$this->db->update('sessions', array('active' => 0), array('id' => $id));
+							
+							//send mail
+							
+							$config = Array(
+									'protocol' => 'smtp',
+									'smtp_host' => 'ssl://smtp.sparkpostmail.com',
+									'smtp_port' => 587,
+									'smtp_user' => 'SMTP_Injection',
+									'smtp_pass' => '1b61e8a4571e70c6681f607b820d5a00b9d6d516',
+									'mailtype'  => 'html', 
+									'charset'   => 'iso-8859-1'
+							);
+							$this->load->library('email', $config);
+							$this->email->set_newline("\r\n");
+
+							// Set to, from, message, etc.
+							$this->email->from('notifications@buybar.cumbiesites.com', 'BUYBAR');
+							$this->email->to($order->email);
+							$this->email->subject('Closed Check Receipt');
+							$this->email->message('<html><body>Hi '.$order->first_name.'! This email is to indicate that your tab at the bar is now officially closed.<br>Thanks,<br><br>The <strong>BUY</strong>BAR Team</body></html>');
+
+							$result = $this->email->send();
+							
+							$this->success_message('Session was marked as inactive.');
+							
       			}
       			//NONE
       			else {

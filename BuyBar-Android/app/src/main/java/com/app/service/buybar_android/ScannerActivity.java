@@ -8,12 +8,14 @@ import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 public class ScannerActivity extends Activity {
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
+    Intent intentScan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +28,11 @@ public class ScannerActivity extends Activity {
     public void scanBar() {
         try {
             //start the scanning activity from the com.google.zxing.client.android.SCAN intent
-            Intent intent = new Intent(ACTION_SCAN);
-            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
-            startActivityForResult(intent, 0);
+            intentScan = new Intent(ACTION_SCAN);
+            intentScan.putExtra("SCAN_MODE", "PDF417_MODE");
+            startActivityForResult(intentScan, 0);
         } catch (ActivityNotFoundException anfe) {
             //on catch, show the download dialog
-            Toast toast = Toast.makeText(this, "Whoops", Toast.LENGTH_LONG);
             showDialog(ScannerActivity.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
         }
     }
@@ -64,8 +65,15 @@ public class ScannerActivity extends Activity {
                 //get the extras that are returned from the intent
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
-                toast.show();
+
+                Log.d("SCAN_RESULT", contents);
+                Log.d("SCAN_RESULT_FORMAT", format);
+
+                CallAPI.session(ScannerActivity.this, contents, true);
+
+                Intent collectInfo = new Intent(this, CollectInfoActivity.class);
+                startActivity(collectInfo);
+                this.finish();
             }
         }
     }

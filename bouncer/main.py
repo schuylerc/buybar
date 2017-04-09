@@ -12,10 +12,33 @@ app = Flask(__name__)
 #mother_url=
 
 
-
 @app.route("/flask", methods=["GET", "POST"])
 def flask():
     if request.method == "POST":
+
+        print("Printing Details")
+
+        try:
+            print("JSON:")
+            print(request.get_json())
+        except:
+            print("CANNOT PRINT")
+        try:
+            print("TEXT:")
+            print(request.text)
+        except:
+            print("CANNOT PRINT")
+        try:
+            print("HEADERS")
+            print(request.headers)
+            print(request.headers["content-type"])
+        except:
+            print("CANNOT PRINT")
+
+        if not request.headers["content-type"] == "application/json":
+            return "401"
+
+        print("BEGIN PROCESSING")
         data=request.get_json()["data"]
         l = License(data)
         ret={}
@@ -45,13 +68,28 @@ def flask():
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
 
-        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
-        try:
-            print(r.json())
-        except:
-            print(r.text)
-
+        print("PROCESSED JSON")
+        print(ret)
+        print("Posting:")
+        client_id="client_58e893bcdaa3258e893bcdaac9"
+        secret="secret_edd35b8ec98a8a4fbf9be85c34"
+        p = request.get_json()["pass"]
+        if p == "True":
+            r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", data=(ret), auth=(client_id, secret))
+            print("RESULTS:")
+            print(r)
+            try:
+                print("JSON:")
+                print(r.json())
+            except:
+                print("TEXT:")
+                print(r.text)
+            print("Returning")
+        ret["id_code"] = ret["customer_identifier"]
+        ret["session_id"] = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/locate_session", data=ret, auth=(client_id, secret)).json()
+        print("RETURNING SUCCESSFULLY")
         return json.dumps(ret)
+
     return "OK"
 if __name__ == '__main__':
     print('')

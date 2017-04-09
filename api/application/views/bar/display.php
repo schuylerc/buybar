@@ -8,17 +8,19 @@
 
 <table class="table table-striped">
   <tr>
+    <th style="width: 75px">ID</th>
     <th style="width: 300px">Customer</th>
     <th>Order</th>
-    <th style="width: 100px">Actions</th>
+    <th style="width: 170px">Actions</th>
   </tr>
   <?PHP foreach($orders as $order): ?>
   <tr id="order<?PHP echo $order->id; ?>">
+    <td><h3><?PHP echo $order->id; ?></h3></td>
     <td><h3><?PHP echo $order->first_name." ".$order->last_name; ?></h3></td>
     <td><h3><?PHP echo $order->title; ?></h3></td>
     <td>
-      <!-- <button class="btn btn-warning">Bump</button> -->
-      <button onclick="clearItem(<?PHP echo $order->id; ?>)" class="btn btn-danger btn-block" style="height: 60px;">Clear</button>
+      <button onclick="clearItem(<?PHP echo $order->id; ?>)" class="btn btn-danger" style="height: 60px;  width: 70px;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+      <?PHP if(!$order->ready){ ?><button onclick="readyItem(<?PHP echo $order->id; ?>)" class="btn btn-success" style="height: 60px; width: 70px;"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button><?PHP } ?>
     </td>
   </tr>
   <?PHP endforeach; ?>
@@ -30,8 +32,10 @@
 
 <script>
 setTimeout(function(){ window.location = "/bar"; }, 5000);
-
 function clearItem(id){
   window.location = '/bar/clear/' + id;
+}
+function readyItem(id){
+  window.location = '/bar/ready/' + id;
 }
 </script>

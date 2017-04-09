@@ -44,9 +44,15 @@ def flask():
         ret["vehicle_class"] = l.vehicle_class()
         ret["endorsements"] = l.endorsements()
         ret["restrictions"] = l.restrictions()
-
-        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
-
+        print("Posting:")
+        r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com/api/v1/sessions", json=(ret))
+        print("Results:")
+        print(r)
+        try:
+            print(r.json())
+        except:
+            print(r.text)
+        print("Returning")
         return json.dumps(ret)
     return "OK"
 if __name__ == '__main__':

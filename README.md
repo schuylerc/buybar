@@ -25,5 +25,16 @@ GET `/api/v1/orders`
 GET `/api/v1/sessions`
 - returns a full list of sessions
 
+POST `/api/v1/orders`
+- creates a new order
+- Required Fields: item, session
 
+POST `/api/v1/sessions`
+- creates a new session by accepting parsed ID info
 
+DELETE `/api/v1/sessions`
+- removes the session from the system
+
+POST `/api/v1/locate_session`
+- finds the session the user started at check in
+- Required Fields: id_code

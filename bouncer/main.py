@@ -47,7 +47,7 @@ def flask():
 
         r = requests.post("http://ec2-54-236-35-76.compute-1.amazonaws.com", json=(ret))
 
-        return json.dumps(ret)
+        return (ret)
     return "OK"
 if __name__ == '__main__':
     print('')

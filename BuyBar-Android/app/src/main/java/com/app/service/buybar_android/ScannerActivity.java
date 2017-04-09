@@ -68,6 +68,10 @@ public class ScannerActivity extends Activity {
 
                 Log.d("SCAN_RESULT", contents);
                 Log.d("SCAN_RESULT_FORMAT", format);
+
+                Intent collectInfo = new Intent(this, CollectInfoActivity.class);
+                startActivity(collectInfo);
+                this.finish();
             }
         }
     }

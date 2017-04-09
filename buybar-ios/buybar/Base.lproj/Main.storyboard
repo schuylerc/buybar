@@ -13,7 +13,7 @@
         <!--Menu View Controller-->
         <scene sceneID="OdE-l4-072">
             <objects>
-                <viewController id="uJM-cd-guI" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController id="uJM-cd-guI" customClass="MenuViewController" customModule="buybar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZ3-3u-qMt"/>
                         <viewControllerLayoutGuide type="bottom" id="N4i-cM-fkm"/>
@@ -23,24 +23,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bct-Wx-5Gt">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <rect key="frame" x="129" y="318" width="116" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="ow5-N0-sz4"/>
+                                    <constraint firstAttribute="height" constant="32" id="wMw-eb-BuA"/>
+                                </constraints>
                                 <state key="normal" title="Check In"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7DZ-xd-2DZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-wg-sYR">
+                                <rect key="frame" x="137" y="88" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Ite-pL-rfD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wZh-ea-h8w"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="BuyBar">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="leading" secondItem="SjB-tZ-Krw" secondAttribute="leadingMargin" id="CTj-be-4QP"/>
-                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="trailing" secondItem="SjB-tZ-Krw" secondAttribute="trailingMargin" id="V3s-2p-6np"/>
-                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="centerY" secondItem="SjB-tZ-Krw" secondAttribute="centerY" id="gRR-RM-36j"/>
+                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="centerX" secondItem="SjB-tZ-Krw" secondAttribute="centerX" id="BrP-13-dAL"/>
+                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="centerX" secondItem="SjB-tZ-Krw" secondAttribute="centerX" id="UHQ-WZ-Ufl"/>
+                            <constraint firstItem="Ltg-wg-sYR" firstAttribute="top" secondItem="hZ3-3u-qMt" secondAttribute="bottom" constant="68" id="ijr-V8-uIv"/>
+                            <constraint firstItem="bct-Wx-5Gt" firstAttribute="centerY" secondItem="SjB-tZ-Krw" secondAttribute="centerY" id="r14-tb-t3O"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkInButton" destination="bct-Wx-5Gt" id="H27-Yp-eCw"/>
+                        <outlet property="logo" destination="Ltg-wg-sYR" id="14G-7Q-cKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiQ-1u-1I0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489" y="-97"/>
+            <point key="canvasLocation" x="-490.39999999999998" y="-97.601199400299862"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -111,6 +137,7 @@
                     <connections>
                         <outlet property="email" destination="SOD-IW-Fx4" id="mfk-fJ-URC"/>
                         <outlet property="phoneNumber" destination="RCD-fm-cD6" id="Nxx-xL-Asc"/>
+                        <outlet property="submitInfo" destination="ifk-hl-QYW" id="qaL-sO-Nfb"/>
                         <segue destination="Oz8-91-oFN" kind="show" identifier="emailSegue" id="7Tz-Hx-mP7"/>
                     </connections>
                 </viewController>

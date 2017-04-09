@@ -30,6 +30,7 @@ def flask():
             print("CANNOT PRINT")
         try:
             print("HEADERS")
+            print(request.headers)
             print(request.headers["content-type"])
         except:
             print("CANNOT PRINT")

@@ -76,6 +76,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func close(_ sender: Any) {
         print("button pressed")
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to check out?", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Yes Pressed")
+            self.performSegue(withIdentifier: "backToBeg", sender: self)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
